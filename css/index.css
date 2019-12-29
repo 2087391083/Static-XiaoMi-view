@@ -1,0 +1,891 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    min-width: 1366px;
+    overflow-x: hidden;
+}
+/* header部分 */
+.header{
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    color: gray;
+    font-size: 12px;
+    padding: 0 5%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+.header>.headerLeft>li{
+    line-height: 40px;
+    float: left;
+}
+.header>.headerRight>li{
+    float: left;
+    line-height: 40px;
+}
+.header>.headerRight::after,
+.header>.headerLeft::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.header>.headerLeft>li:not(.liEnd)::after,
+.header>.headerRight>li:not(.liEnd)::after{
+    content: "|";
+    color: gray;
+    font-size: 12px;
+    line-height: 40px;
+    padding: 0 7px;
+}
+.header>.headerRight>li:nth-child(3){
+    padding-right: 14px;
+}
+.header li:hover{
+    color: white;
+    cursor: pointer;
+}
+.header>.headerRight>li:nth-child(4){
+    padding: 0 10px;
+    background-color: rgb(218, 208, 208,0.3);
+    position: relative;
+    width: 75px;
+}
+.headerLeft .loadApp{
+    position: relative;
+}
+.headerLeft .loadApp>.eweima{
+    position: absolute;
+    left: -55%;
+    width: 130px;
+    text-align: center;
+    box-shadow: 0 0 0 gainsboro,
+                2px 2px 2px gainsboro,
+                0 2px 2px gainsboro,
+                -2px 2px 2px gainsboro;
+    z-index: 3;
+    display: none;
+    background-color: white;
+}
+.loadApp>.eweima>p::after{
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom: 10px solid white;
+    position: fixed;
+    top: 21px;
+    left: 48.5%;
+}
+.headerLeft .loadApp>.eweima p{
+    line-height: 20px;
+    color: gray;
+}
+.headerLeft .loadApp>.eweima>img{
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+}
+.headerLeft .loadApp:hover>.eweima{
+    display: block;
+}
+.header>.headerRight>li:nth-child(4):hover>span{
+    color: orange;
+}
+.headerRight .gwcFocus{
+    width: 300px;
+    height: 100px;
+    background-color: white;
+    box-shadow: 0 0 0 gainsboro,
+                2px 2px 2px gainsboro,
+                0 2px 2px gainsboro,
+                -2px 2px 2px gainsboro;
+    position: absolute;
+    right: 0; 
+    top: 40px;
+    text-align: center;
+    line-height: 100px;
+    z-index: 3;
+    color: gray;
+    display: none;
+}
+.header>.headerRight>li:nth-child(4):hover .gwcFocus{
+    display: inline-block;
+}
+
+
+/* 菜单栏部分 */
+.muneNav{
+    display: block;
+    width: 100%;
+}
+.menu{
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+    height: 100px;
+    /* background-color: yellowgreen; */
+    justify-content: space-between;
+    align-items: center;
+}
+.menu li{
+    float: left;
+    padding: 0 15px;
+    cursor: pointer;
+    height: 100px;
+    line-height: 100px;
+}
+.menu li:hover{
+    color: orange;
+}
+.menu>.sousuo{
+    width: 250px;
+    height: 50px;
+    border: 1px solid gainsboro;
+    display: flex;
+    justify-content: space-between;
+}
+.menu>.sousuo>.sousuoL{
+    width: 200px;
+    height: 50px;
+    position: relative;
+}
+.menu .sousuoL>.hide{
+    display: inline-block;
+    position: absolute;
+    top: 13px;
+    right: 0px;
+}
+.menu .sousuoL>.hide>span{
+    display: inline-block;
+    padding: 2px;
+    margin: 0 5px;
+    background-color: gainsboro;
+    font-size: 10px;
+    color: gray;
+    border-radius: 2px;
+}
+.menu>.sousuo>.sousuoL>input{
+    width: 199px;
+    height: 50px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.menu>.sousuo>.suosouR{
+    width: 50px;
+    height: 50px;
+    border-left: 1px solid gainsboro;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    color: gray;
+    transition: 0.3s all;
+}
+.menu>.sousuo>.suosouR:hover{
+    background-color: orange;
+    color: white;
+}
+/* 菜单部分----〉子菜单部分 */
+.muneNav{
+    position: relative;
+}
+.xmPhone{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+    padding-bottom: 20px;
+    padding-top: 40px;
+    font-size: 12px;
+    box-shadow: 0 1px 1px 1px gainsboro;
+    background-color: white;
+    position: absolute;
+
+    z-index: 5;
+    /* height: 0; */
+    
+}
+.xmPhone>ul>li{
+    float: left;
+}
+.xmPhone>ul>li img{
+    height: 130px;
+    width: 200px;
+    padding-bottom: 5px;
+}
+.xmPhone>ul>li:nth-child(even){
+    display: inline-block;
+    height: 130px;
+    width: 1px;
+    background-color: gainsboro;
+}
+.xmPhone>ul>li span{
+    line-height: 20px;
+}
+.xmPhone>ul>li .price{
+    color: orange;
+}
+.xmPhone>ul>li:nth-child(1),
+.xmPhone>ul>li:nth-child(3),
+.xmPhone>ul>li:nth-child(5){
+    position: relative;
+}
+.xmPhone>ul>li:nth-child(1)::after,
+.xmPhone>ul>li:nth-child(3)::after,
+.xmPhone>ul>li:nth-child(5)::after{
+    content: "新品";
+    display: inline-block;
+    width: 50px;
+    border: 1px solid orange;
+    color: orange;
+    text-align: center;
+    height: 18px;
+    line-height: 18px;
+    position: absolute;
+    top: -41px;
+    left: 37%;
+}
+.Phone01,
+.hmPhone,
+.tv{
+    display: none;
+}
+
+/* 主体内容01部分 */
+.sec01{
+   display: flex;
+   width: 90%;
+   margin: 0 auto; 
+   position: relative;
+}
+.sec01Left a{
+    display: inline-flex;
+    width: 220px;
+    height: 45px;
+    justify-content: space-between;
+    background-color: gray;
+    padding: 0 15px;
+    line-height: 45px;
+    font-size: 15px;
+    color: white;
+    box-sizing: border-box;
+}
+.sec01Left>ul{
+    display: flex;
+    width: 220px;
+    flex-wrap: wrap;
+    background-color: gray;
+    padding: 18px 0;
+    box-sizing: border-box;
+}
+.sec01Left>ul>li a:hover{
+    background-color: orange;
+}
+
+.sec01Right{
+    width: 1020px;
+    height: 486px;
+    background-color: rebeccapurple;
+}
+.sec01Right img{
+    width: 1010px;
+    height: 486px;
+}
+
+/* 鼠标经过子菜单 */
+.sec01LeftFocus{
+    position: absolute;
+    left: 220px;
+    display: none;
+    border: 1px solid gainsboro;
+    border-left: none;
+    background-color: white;
+}
+.sec01LeftFocus>ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 1010px;
+    padding: 20px 20px 0 20px;
+    box-sizing: border-box;
+}
+.sec01LeftFocus>ul li{
+    display: flex;
+    width:150px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+.sec01LeftFocus>ul a{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    
+}
+.sec01LeftFocus>ul>li img{
+    width: 160px;
+    height: 110px;
+    align-self: center;
+}
+
+
+/* 主体内容02部分 */
+.sec02{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.sec02Content{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.sec02Content1{
+   width: 228px;
+   height: 170px; 
+   background-color: rgb(100, 100, 100);
+}
+.sec02Content1>ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.sec02Content1>ul>li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75.2px;
+    height: 84px;
+}
+.sec02Content1>ul>li>a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: gainsboro;
+    transition: 0.5s all;
+}
+.sec02Content1>ul>li span:nth-child(1){
+    font-size: 35px;
+}
+.sec02Content1>ul>li span:nth-child(2){
+    font-size: 12px;
+}
+.sec02Content1>ul>li:hover span{
+    color: white;
+}
+.sec02Content1>ul>li:nth-child(1),
+.sec02Content1>ul>li:nth-child(2),
+.sec02Content1>ul>li:nth-child(4),
+.sec02Content1>ul>li:nth-child(5){
+    border-right: 1px solid rgb(241, 236, 236,0.5);
+}
+.sec02Content1>ul>li:nth-child(1),
+.sec02Content1>ul>li:nth-child(2),
+.sec02Content1>ul>li:nth-child(3){
+    border-bottom: 1px solid rgb(241, 236, 236,0.5);
+}
+.sec02Content img{
+    width: 316px;
+    height: 170px;
+    transition: 0.5s all;
+}
+.sec02Content2 img:hover,
+.sec02Content3 img:hover,
+.sec02Content4 img:hover{
+    box-shadow: 0px 0px 0px transparent,
+                0px 0px 0px transparent,
+                0px 0px 0px transparent,
+                0px 8px 8px gainsboro;
+}
+
+/* 主体内容03部分 */
+.sec03{
+    width: 100%;
+    margin-bottom: 40px;
+}
+.sec03Content{
+    width: 90%;
+    margin: 0 auto;
+}
+.sec03Content img{
+    width: 100%;
+}
+
+/* 主体内容04部分 */
+.sec04{
+    display: flex;
+    background-color: gainsboro;
+    width: 100%;
+    padding: 40px 5% 40px;
+    box-sizing: border-box;
+}
+.sec04>.sec04Content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; 
+}
+.sec04 .sec04Top{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+}
+.sec04 .sec04Top>span:nth-child(1){
+    font-size: 30px;
+}
+.sec04 .sec04Top>span:nth-child(2){
+    font-size: 18px;
+    line-height: 50px; 
+}
+.sec04 .sec04Top>span:nth-child(2) span{
+    color: gray;
+    font-size: 20px;
+}
+.sec04 .sec04Top>span:nth-child(2):hover,
+.sec04 .sec04Top>span:nth-child(2):hover span{
+    color: orange;
+    cursor: pointer;
+}
+.sec04Img{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.sec04Img>.sec04Left>img{
+    width: 232px;
+    height: 620px;
+}
+.sec04Img>.sec04Right{
+    display: flex;
+    flex-wrap: wrap;
+}
+.sec04Img>.sec04Right>ul{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.sec04Img>.sec04Right>ul>li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 240px;
+    height: 305px;
+    background-color: white;
+    font-size: 14px;
+    transition: 0.5s all;
+}
+.sec04Img>.sec04Right>ul>li:nth-child(1),
+.sec04Img>.sec04Right>ul>li:nth-child(5){
+    margin-left: 15px;
+}
+.sec04Img>.sec04Right>ul>li img{
+    padding-top: 12px;
+    width: 200px;
+    height: 200px;
+}
+.sec04Img ul>li>.pz{
+    color: gray;
+    font-size: 8px;
+    padding-top: 3px;
+    padding-bottom: 13px;
+}
+.sec04Img ul>li del{
+    color: gray;
+}
+.sec04Img ul>li .price{
+    color: orange;
+}
+.sec04Img>.sec04Right>ul>li:hover{
+    box-shadow: 0 0 3px rgb(54, 54, 54);
+    transform: translate(0,-3px);
+}
+
+/* 主体内容05/07部分 */
+.sec05,
+.sec07{
+    background-color: gainsboro;
+    padding: 0 5% 40px;
+    box-sizing: border-box;
+}
+.sec05 img,
+.sec07 img{
+    width: 100%;
+}
+
+/* 主体内容06部分 */
+.sec06{
+    display: flex;
+    background-color :gainsboro;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 5% 20px;
+    box-sizing: border-box;
+}
+.sec06>.sec06Top{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+.sec06>.sec06Top>span{
+    font-size: 30px;
+}
+.sec06>.sec06Top ul{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 280px;
+}
+.sec06>.sec06Top li{
+    display: flex;
+    font-size: 18px;
+    line-height: 33px;
+    border-bottom: 2px solid transparent;
+    transition: 0.5s all;
+    transform-origin: center;
+}
+.sec06>.sec06Top li a{
+    color: black;
+}
+.sec06>.sec06Top li:hover{
+    border-bottom: 2px solid orange;
+
+}
+.sec06>.sec06Top li:hover a{
+    color: orange;
+}
+.sec06>.sec06Botton{
+    display: flex;
+}
+.sec06>.sec06Botton>ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.sec06>.sec06Botton>ul>li{
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+    height: 300px;
+    background-color: white;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: 0.5s all;
+}
+.sec06>.sec06Botton>ul>li>.show{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.sec06>.sec06Botton>ul>li>img{
+    width: 100%;
+    height: 100%;
+}
+.hideLi01>.show>span{
+    display: flex;
+    text-align: center;
+    font-size: 14px;
+}
+.hideLi01>.show a{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0;
+}
+.hideLi01>.show img{
+    width: 180px;
+    height: 180px;
+}
+.hideLi01>.show .pz{
+    color: gray;
+    font-size: 8px;
+    padding-top: 3px;
+    padding-bottom: 10px;
+}
+.hideLi01>.show .price{
+    color: orange;
+}
+.hideLi01>.show del{
+    color: gray;
+}
+.hideLi01>.hide{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: orange;
+    position: absolute;
+    bottom: -60px;;
+    left: 0;
+    z-index: 1;
+    font-size: 12px;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    transition: 0.5s all;
+}
+.hideLi01>.hide p{
+    line-height: 22px;
+    color: white;
+}
+.hideLi01>.hide p:nth-child(2){
+    color: gainsboro;
+}
+.hideLi01:hover .hide{
+    bottom: 0;
+}
+.hideLi01:hover{
+    box-shadow: 0px 0px 3px gray;
+    transform: translate(0,-5px);
+}
+
+/* 主体内容07部分 */
+
+/* 主体内容08部分 */
+.sec08{
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    background-color:gainsboro;
+    width: 100%;
+    height: 330px;
+    padding: 0 5% 30px;
+    box-sizing: border-box;
+}
+ .sec08>.sec08Top{
+     display: flex;
+     justify-content: space-between;
+     width: 100%;
+     font-size: 30px;
+     padding: 0 0 15px 0;
+ }
+.sec08Top>span>.next,
+.sec08Top>span>.prev{
+     display: inline-block;
+     width: 30px;
+     border: 1px solid gray;
+     color: gray;
+     text-align: center;
+     height: 25px;
+     line-height: 25px;
+ }
+ .sec08Top>span>.prev{
+     transform: rotate(180deg);
+ }
+ .sec08Top>span>.next:hover,
+.sec08Top>span>.prev:hover{
+    color: orange;
+    cursor: pointer;
+}
+ .sec08>.sec08Bottom{
+     display: flex;
+     width: 100%;
+     height: 230px;
+     position: relative;
+     overflow: hidden;
+ }
+.sec08Bottom>ul{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.sec08Bottom>ul>li{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 200px;
+    height: 230px;
+    margin-right: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background-color: white;
+    font-size: 15px;
+}
+.sec08Bottom>ul>li>img{
+    width: 140px;
+    height: 140px;
+}
+.sec08Bottom>ul>li>p{
+    line-height: 30px;
+}
+.sec08Bottom>ul>li>p:nth-child(3){
+    color: orange;
+}
+
+
+/* 首页底部 */
+.footer{
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.footer>.fTop{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 40px 20px;
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 30px;
+    color: gray;
+    border-bottom: 1px solid gray;
+}
+.footer>.fTop>li{
+    display: flex;
+}
+.footer>.fTop>li:nth-child(odd):hover{
+    color: orange;
+    cursor: pointer;
+}
+.footer>.fTop>li:nth-child(even){
+    font-size: 30px;
+}
+.fMiddle{
+    display: flex;
+    justify-content: flex-start;
+    margin: 30px 0 30px;
+    background-color: white;
+}
+.fMiddle>dl{
+    display: flex;
+    width: 159px;
+    flex-direction: column;
+    font-size: 13px;
+}
+.fMiddle>dl>dt{
+    color: black;
+    line-height: 20px;
+    padding-bottom: 10px;
+}
+.fMiddle>dl>dd{
+    color: gray;
+    line-height: 30px;
+}
+.fMiddle>dl>dd:hover{
+    color: orange;
+    cursor: pointer;
+}
+.fMiddle>dl:nth-child(7){
+    width: 251px;
+    text-align: center;
+    border-left: 1px solid gray;
+}
+.fMiddle>dl:nth-child(7)>dd:nth-child(1){
+    font-size: 20px;
+    color: orange;
+    padding: 0 0 8px;
+}
+.fMiddle>dl:nth-child(7)>dd:nth-child(2),
+.fMiddle>dl:nth-child(7)>dd:nth-child(3){
+    line-height: 15px;
+}
+.fMiddle>dl:nth-child(7)>.kf{
+    margin: 10px auto;
+    display: inline-block;
+    width: 150px;
+    height: 30px;
+    border: 1px solid orange;
+    transition: 0.5s all;
+}
+.fMiddle>dl:nth-child(7)>.kf:hover{
+    background-color: orange;
+    color: white;
+}
+
+.fBottom{
+    display: flex;
+    width: 100%;
+}
+.fBottom>img{
+    height: 57px;
+}
+.fBottom>.fBottomContent{
+    padding-left: 20px;
+}
+.fBottomContent>ul>li{
+    float: left;
+    padding-right: 7px;
+    font-size: 12px;
+    color: gray;
+}
+.fBottomContent>ul>li>a{
+    color: gray;
+}
+.fBottomContent>ul>li:hover>a{
+    color: orange;
+}
+.fBottomContent>span{
+    font-size: 12px;
+    color: rgb(170, 170, 170);
+}
+.fBottomContent>img{
+    width: 85px;
+    height: 28px;
+    padding: 10px 0 20px;
+}
+.fBottomWz{
+    width: 100%;
+    color: rgb(190, 190, 190);
+    font-size: 18px;
+    font-family: "黑体";
+    text-align: center;
+    height: 65px;
+    letter-spacing: 5px;
+}
+
+
+/* aside */
+.aside{
+    position: fixed;
+    right: 24px;
+    top: 370px;
+}
+.aside>ul>li{
+    width: 25px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid rgb(167, 164, 164);
+}
+.aside>ul>li:not(.backTop){
+    border-bottom: none;
+}
+.aside>ul>li:nth-child(6){
+    margin-top: 20px;
+}
+.aside>ul>li:nth-child(6)>a>span{
+    transform: rotate(180deg);
+}
+.aside>ul>li>a{
+    color: gray;
+}
+.aside>ul>li:hover>a{
+    color: orange;
+}
